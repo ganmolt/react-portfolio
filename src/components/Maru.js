@@ -4,6 +4,7 @@ import png_mbtk from "../Images/maru/mabataki_ren_touka.png";
 import png_hidari from "../Images/maru/hidarimuku_1_ren_touka.png";
 import png_migi from "../Images/maru/migimuku_1_ren_touka.png";
 
+import Draggable from 'react-draggable'
 
 class Maru extends React.Component {
     constructor(props) {
@@ -75,6 +76,7 @@ class Maru extends React.Component {
     
     render() {
         return (
+            <Draggable defaultPosition={{x: 0, y: 0}}>
             <div className="wrapper">
                 <div className="maru-area">
                     <div className={this.state.isJumped ? "jump" : ""} id="button" onClick={() => this.onClickButton()}>
@@ -85,6 +87,7 @@ class Maru extends React.Component {
                     </div>
                 </div>
             </div>
+            </Draggable>
         );
     }
 }
