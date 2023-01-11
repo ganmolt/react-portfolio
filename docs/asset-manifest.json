@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/react-portfolio/static/css/main.23820a01.css",
-    "main.js": "/react-portfolio/static/js/main.fc8e239f.js",
+    "main.css": "/react-portfolio/static/css/main.5ccb14ee.css",
+    "main.js": "/react-portfolio/static/js/main.436d7766.js",
+    "static/media/migimuku_1_ren_touka.png": "/react-portfolio/static/media/migimuku_1_ren_touka.5e54bb02b71061025360.png",
+    "static/media/hidarimuku_1_ren_touka.png": "/react-portfolio/static/media/hidarimuku_1_ren_touka.814b2c92853e08fdeaa9.png",
+    "static/media/mabataki_ren_touka.png": "/react-portfolio/static/media/mabataki_ren_touka.e339a35bebf5c69f86b7.png",
     "static/media/magmag.jpg": "/react-portfolio/static/media/magmag.5398ac372fabb0fdc38a.jpg",
     "static/media/seimitsukensaku.png": "/react-portfolio/static/media/seimitsukensaku.4039a9e0485e3ca396e9.png",
     "static/media/linkhub.jpg": "/react-portfolio/static/media/linkhub.85f334cc16e52976e622.jpg",
     "index.html": "/react-portfolio/index.html",
-    "main.23820a01.css.map": "/react-portfolio/static/css/main.23820a01.css.map",
-    "main.fc8e239f.js.map": "/react-portfolio/static/js/main.fc8e239f.js.map"
+    "main.5ccb14ee.css.map": "/react-portfolio/static/css/main.5ccb14ee.css.map",
+    "main.436d7766.js.map": "/react-portfolio/static/js/main.436d7766.js.map"
   },
   "entrypoints": [
-    "static/css/main.23820a01.css",
-    "static/js/main.fc8e239f.js"
+    "static/css/main.5ccb14ee.css",
+    "static/js/main.436d7766.js"
   ]
 }
