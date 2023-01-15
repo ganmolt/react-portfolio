@@ -25,7 +25,11 @@ const HomePage = () => {
       </p>
 
       <div className="counter">
-        <table border="0">
+        <Helmet>
+          <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=13297215&main=1"></script>
+        </Helmet>
+        <img src="//counter1.fc2.com/counter_img.php?id=13297215&main=1" />
+        {/* <table border="0">
           <tbody>
             <tr>
               <td valign="middle">
@@ -50,7 +54,7 @@ const HomePage = () => {
               </td>
             </tr>
           </tbody>
-        </table>
+        </table> */}
       </div>
 
       <section className="page-section" id="services">
