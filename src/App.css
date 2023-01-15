@@ -20,10 +20,10 @@
     font-size: 50px;
   }
 
-  img {
+  /* img {
     width: 300px;
     height: 500px;
-  }
+  } */
 
   /*----------------------------------------------
   -------------------- header --------------------
@@ -84,8 +84,14 @@
     border-radius: 50%;
     margin-bottom: 15px;
   }
-  
 
+  .counter {
+    scale: 1.5;
+  }
+  .counter table {
+    border:#CCCCCC 1px dotted;
+    margin :auto;
+  }
   /*----------------------------------------------
   ---------------------作品一覧--------------------
   --------------------------------------------*/
@@ -96,20 +102,29 @@
 
   .service .img-area{
     height: 400px;
-    background-color:#48b4af;
+    background-color:#565656;
 
     border-radius: 5%;
     border: 1px solid #333;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
   }
   
   .service img{
-    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
     height: auto;
+    padding: 5%;
+
+    transform: translate(-50%, -50%);
+    
+    background-color: rgb(255, 255, 255);
   }
+
+
+
 
   /*----------------------------------------------
   -------------------- footer --------------------
