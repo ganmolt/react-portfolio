@@ -1,9 +1,9 @@
 import './App.css';
-import HomePage from './components/HomePage';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import { HomePage } from './components/HomePage';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 
-import Maru from './components/Maru';
+import { Maru } from './components/Maru';
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 

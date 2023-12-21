@@ -13,7 +13,7 @@ import {Helmet} from 'react-helmet';
 import { FaGithub } from "react-icons/fa"
 //import {ImMail4} from "react-icons/im"
 
-const HomePage = () => {
+export const HomePage = () => {
   return (
     <div className="container text-center">
       <h1>ganmoltのポートフォリオ</h1>
@@ -29,32 +29,6 @@ const HomePage = () => {
           <script language="javascript" type="text/javascript" src="//counter1.fc2.com/counter.php?id=13297215&main=1"></script>
         </Helmet>
         <img src="//counter1.fc2.com/counter_img.php?id=13297215&main=1" />
-        {/* <table border="0">
-          <tbody>
-            <tr>
-              <td valign="middle">
-                <img src="http://smart-counter.net/images/today.gif" alt="アクセスカウンター" border="0"/>
-              </td>
-              <td valign="middle">
-                <img src="http://smart-counter.net/tday-d50-f5-008/63c3ef6240560/" alt="アクセスカウンター" border="0"/>
-              </td>
-
-              <td valign="middle">
-              <img src="http://smart-counter.net/images/yesterday.gif" alt="アクセスカウンター"/>
-              </td>
-              <td valign="middle">
-                <img src="http://smart-counter.net/yday-d50-f5-008/63c3ef6240560/" alt="アクセスカウンター" border="0"/>
-              </td>
-
-              <td valign="middle">
-                <img src="http://smart-counter.net/images/total.gif" alt="アクセスカウンター"/>
-              </td>
-              <td valign="middle">
-                <img src="http://smart-counter.net/total-d50-f6-008/63c3ef6240560/" alt="アクセスカウンター" border="0"/>
-              </td>
-            </tr>
-          </tbody>
-        </table> */}
       </div>
 
       <section className="page-section" id="services">
@@ -132,5 +106,3 @@ const HomePage = () => {
     </div>
   );
 };
-
-export default HomePage;
