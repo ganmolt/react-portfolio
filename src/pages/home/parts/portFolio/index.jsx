@@ -1,6 +1,6 @@
-import imgSeimitsuKensaku from "Images/home/seimitsukensaku.jpg";
-import imgLinkHub from "Images/home/linkhub.jpg";
-import imgPortfolio from "Images/home/magmag.jpg";
+import imgSeimitsuKensaku from "Images/home/SeimitsuKensaku.jpg";
+import imgLinkHub from "Images/home/LinkHub.jpg";
+import imgPortfolio from "Images/home/Slugma.jpg";
 import { Work } from "./work";
 
 export const PortFolio = () => {

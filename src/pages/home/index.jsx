@@ -1,4 +1,4 @@
-import profileImage from "Images/home/profile.jpg";
+import profileImage from "Images/home/Profile.jpg";
 
 import { Counter } from './parts/counter';
 import { PortFolio } from './parts/portFolio';
