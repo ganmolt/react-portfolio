@@ -1,0 +1,8 @@
+.about_container {
+  width: 350px;
+  text-align: center;
+}
+
+.about_item {
+  display: inline-block;
+}

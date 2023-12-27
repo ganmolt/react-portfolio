@@ -1,0 +1,13 @@
+.history_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.history_item {
+  margin-right: 10px;
+  text-align: left;
+}
+
+.history_description {
+  margin-left: 20px;
+}
