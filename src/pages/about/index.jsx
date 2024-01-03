@@ -31,11 +31,6 @@ export const About = () => {
       </p>
       <p>
         <div className="about_item">
-          <History />
-        </div>
-      </p>
-      <p>
-        <div className="about_item">
           <Qualification />
         </div>
       </p>

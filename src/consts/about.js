@@ -22,19 +22,25 @@ export const HOBBY_LIST = [
       'AtCoder緑(942) (C++)',
     ],
   },
-  { hobbyName: 'タイピング',
+  { hobbyName: 'タイピング（e-typing）',
     descriptions: [
-      'e-typing',
       '腕試し自己best: 471pt',
       '最高WPM: 524.47',
       '第1119回 腕試しタイピング: 200位',
       '第1112回 腕試しタイピング: 142位',
     ],
   },
-  { hobbyName: 'ダーツ',
+  { hobbyName: 'カラオケ',
     descriptions: [
-      '初心者です',
-      'DARTSLIVE: CC(5.05)',
+      '精密採点DX-G 素点100点: 499曲',
+      '精密採点DX-G 総合100点: 649曲',
+      '精密採点DX 100点: 159曲',
+      '分析採点AI 100点: 1曲',
+    ]
+  },
+  { hobbyName: 'ダーツ（DARTSLIVE）',
+    descriptions: [
+      'STATS: CC(5.05)',
     ],
   },
 ];
