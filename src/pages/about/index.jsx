@@ -2,6 +2,9 @@ import profileImage from "Images/home/Profile.jpg";
 
 import {History} from './parts/history';
 import {Profile} from './parts/profile';
+import {Qualification} from './parts/qualification/index';
+import {Hobby} from './parts/hobby';
+import {Other} from './parts/other';
 
 import './index.css';
 
@@ -16,13 +19,20 @@ export const About = () => {
       <img src={profileImage} className="profileImage" alt="profileImage" />
       <p>{description}</p>
 
-      <h3>Profile</h3>
       <div className="about_item">
         <Profile />
       </div>
-      <h3>history</h3>
       <div className="about_item">
         <History />
+      </div>
+      <div className="about_item">
+        <Qualification />
+      </div>
+      <div className="about_item">
+        <Hobby />
+      </div>
+      <div className="about_item">
+        <Other />
       </div>
     </div>
   );

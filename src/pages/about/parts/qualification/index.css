@@ -1,0 +1,9 @@
+.qualification_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.qualification_item {
+  margin-right: 10px;
+  text-align: left;
+}
