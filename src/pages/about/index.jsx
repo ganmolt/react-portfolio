@@ -14,26 +14,41 @@ export const About = () => {
 
 
   return (
-    <div className="container about_container text-center">
+    <div className="container about_container">
       <h1>{title}</h1>
       <img src={profileImage} className="profileImage" alt="profileImage" />
       <p>{description}</p>
 
-      <div className="about_item">
-        <Profile />
-      </div>
-      <div className="about_item">
-        <History />
-      </div>
-      <div className="about_item">
-        <Qualification />
-      </div>
-      <div className="about_item">
-        <Hobby />
-      </div>
-      <div className="about_item">
-        <Other />
-      </div>
+      <p>
+        <div className="about_item">
+          <Profile />
+        </div>
+      </p>
+      <p>
+        <div className="about_item">
+          <History />
+        </div>
+      </p>
+      <p>
+        <div className="about_item">
+          <History />
+        </div>
+      </p>
+      <p>
+        <div className="about_item">
+          <Qualification />
+        </div>
+      </p>
+      <p>
+        <div className="about_item">
+          <Hobby />
+        </div>
+      </p>
+      <p>
+        <div className="about_item">
+          <Other />
+        </div>
+      </p>
     </div>
   );
 };
