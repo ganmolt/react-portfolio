@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.72af6edc.css",
+    "main.js": "/static/js/main.e52b5c8a.js",
+    "static/media/migimuku_1_ren_touka.png": "/static/media/migimuku_1_ren_touka.5e54bb02b71061025360.png",
+    "static/media/hidarimuku_1_ren_touka.png": "/static/media/hidarimuku_1_ren_touka.814b2c92853e08fdeaa9.png",
+    "static/media/mabataki_ren_touka.png": "/static/media/mabataki_ren_touka.e339a35bebf5c69f86b7.png",
+    "static/media/Slugma.jpg": "/static/media/Slugma.feea3196ab8b54a52def.jpg",
+    "static/media/Profile.jpg": "/static/media/Profile.5398ac372fabb0fdc38a.jpg",
+    "static/media/SeimitsuKensaku.jpg": "/static/media/SeimitsuKensaku.958e46432f9745992498.jpg",
+    "static/media/LinkHub.jpg": "/static/media/LinkHub.85f334cc16e52976e622.jpg",
+    "index.html": "/index.html",
+    "main.72af6edc.css.map": "/static/css/main.72af6edc.css.map",
+    "main.e52b5c8a.js.map": "/static/js/main.e52b5c8a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.72af6edc.css",
+    "static/js/main.e52b5c8a.js"
+  ]
+}
