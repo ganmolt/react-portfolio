@@ -1,21 +1,15 @@
 import React from 'react';
 
-export const DownloadPDFButton = ({pdfBase64}) => {
-  // 1. PDFのBase64エンコードデータ（例としてダミーデータを使用）
-
-  // 2. ダウンロード機能の実装
+export const DownloadPDFButton = ({pdfPath}) => {
   const downloadPDF = () => {
-    const a = document.createElement('a');
-    a.href = pdfBase64;
-    a.download = 'downloaded_document.pdf';
-
-    // a要素をクリックしてダウンロードを開始
-    document.body.appendChild(a);
-    a.click();
-
-    // a要素を削除
-    document.body.removeChild(a);
+    // const pdfUrl = '/pieces/1/scores/1/score.pdf';
+    console.log(pdfPath);
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.download = 'sample.pdf';
+    link.click();
   };
+
 
   return (
     <button onClick={downloadPDF}>

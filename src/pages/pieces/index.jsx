@@ -16,7 +16,7 @@ export const Pieces = () => {
             {piece.scores.map((score) => (
               <li key={score.id}>
                 {score.name}
-                <DownloadPDFButton pdfBase64={score.pdfBase64} />
+                <DownloadPDFButton pdfPath={score.pdfPath} />
               </li>
               
             ))}
