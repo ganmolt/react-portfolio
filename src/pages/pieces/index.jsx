@@ -1,5 +1,5 @@
 import { DownloadPDFButton } from './DownloadPDFButton';
-export const Scores = () => {
+export const Pieces = () => {
   const pieces = [
     {
       title: '作品1',

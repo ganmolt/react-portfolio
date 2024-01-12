@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Home } from './pages/home';
-import { Scores } from './pages/scores';
+import { Pieces } from './pages/pieces';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Maru } from './components/Maru';
@@ -15,7 +15,7 @@ function App() {
 
         <Routes>
           <Route path="/" element = {<Home />} />
-          <Route path="/scores" element = {<Scores />} />
+          <Route path="/pieces" element = {<Pieces />} />
         </Routes>
 
         <Footer />
