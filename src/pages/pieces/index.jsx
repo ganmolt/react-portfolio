@@ -1,5 +1,5 @@
-import { DownloadPDFButton } from './DownloadPDFButton';
 import { PIECE_LIST as pieces } from 'consts/pieces'
+import { Piece } from './piece';
 export const Pieces = () => {
   return (
     <div className="container text-center">
@@ -9,18 +9,7 @@ export const Pieces = () => {
       <h1>Pieces</h1>
       {pieces.map((piece) => (
         <div key={piece.id}>
-          <h2>{piece.title}</h2>
-          <p>{piece.description}</p>
-          <h3>PDF</h3>
-          <ul>
-            {piece.scores.map((score) => (
-              <li key={score.id}>
-                {score.name}
-                <DownloadPDFButton pdfPath={score.pdfPath} />
-              </li>
-              
-            ))}
-          </ul>
+          <Piece piece={piece} />
         </div>
       ))}
     </div>
