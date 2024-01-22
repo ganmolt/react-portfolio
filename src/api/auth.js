@@ -33,7 +33,9 @@ export const signOut = () => {
 export const getCurrentUser = () => {
   if (!Cookies.get("_access_token")) return;
 
-  return axios.post("http://localhost:3001/auth/session", {
-    "access-token": Cookies.get("_access_token"),
+  return axios.get("http://localhost:3001/auth/session", {
+    headers: {
+      "access-token": Cookies.get("_access_token"),
+    },
   });
 };
