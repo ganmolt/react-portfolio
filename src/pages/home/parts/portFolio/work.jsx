@@ -1,6 +1,6 @@
 export const Work = ({
   url,
-  img,
+  encodedImg,
   name,
   description,
   tech,
@@ -9,7 +9,7 @@ export const Work = ({
     <>
       <div className="img-area">
         <a href={url} target="_blank" rel="noopener noreferrer">
-          <img src={img} alt={name} />
+          <img src={`data:image/jpeg;base64,${encodedImg}`} alt="encoded" />
         </a>
       </div>
       <h4 className="my-3">{name}</h4>
