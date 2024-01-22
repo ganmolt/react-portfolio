@@ -12,6 +12,9 @@ export const Header = () => {
         <li>
           <Link to="/">ホーム</Link>
         </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
       </ul>
     </nav>
   </header>;
