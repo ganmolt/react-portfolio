@@ -29,11 +29,9 @@ export const SignIn = () => {
       const res = await signIn(params);
       if (res.status === 200) {
         Cookies.set("_access_token", res.data["access-token"]);
-
         setIsSignedIn(true);
-        // setCurrentUser(res.data.data);
 
-        // navigate("/admin");
+        navigate("/admin");
       }
     } catch (e) {
       console.log(e);
