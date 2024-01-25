@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 
 // サインイン
 export const signIn = (params) => {
-  return axios.post("http://localhost:3001/auth/signin", 
+  return axios.post(`${process.env.REACT_APP_API}/auth/signin`, 
     params,
   );
 };
@@ -12,7 +12,7 @@ export const signIn = (params) => {
 export const getCurrentUser = () => {
   if (!Cookies.get("_access_token")) return;
 
-  return axios.get("http://localhost:3001/auth/session", {
+  return axios.get(`${process.env.REACT_APP_API}/auth/session`, {
     headers: {
       "access-token": Cookies.get("_access_token"),
     },

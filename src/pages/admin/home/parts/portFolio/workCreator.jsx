@@ -24,7 +24,7 @@ export const WorkCreator = () => {
   };
 
   const handleFormSubmit = () => {
-    return axios.post("http://localhost:3001/admin/works/create", {
+    return axios.post(`${process.env.REACT_APP_API}/admin/works/create`, {
         name: name,
         description: description,
         url: url,
