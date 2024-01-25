@@ -16,7 +16,7 @@ export const PortFolio = () => {
     try {
       if (!Cookies.get("_access_token")) return;
     
-      const res = await axios.get(`${process.env.REACT_APP_API}/admin/works`, {
+      const res = await axios.get(`${process.env.REACT_APP_API}/works`, {
         headers: {
           "access-token": Cookies.get("_access_token"),
         },
