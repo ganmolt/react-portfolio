@@ -14,13 +14,7 @@ export const PortFolio = () => {
 
   const handleGetWorks = async () => {
     try {
-      if (!Cookies.get("_access_token")) return;
-    
-      const res = await axios.get(`${process.env.REACT_APP_API}/works`, {
-        headers: {
-          "access-token": Cookies.get("_access_token"),
-        },
-      });
+      const res = await axios.get(`${process.env.REACT_APP_API}/works`);
       if (res?.status === 200) {
         setWorks(res?.data);
       } else {
