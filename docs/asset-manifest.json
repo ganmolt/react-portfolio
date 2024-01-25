@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react-portfolio/static/css/main.361c65b5.css",
-    "main.js": "/react-portfolio/static/js/main.c32cec95.js",
-    "static/media/migimuku_1_ren_touka.png": "/react-portfolio/static/media/migimuku_1_ren_touka.5e54bb02b71061025360.png",
-    "static/media/hidarimuku_1_ren_touka.png": "/react-portfolio/static/media/hidarimuku_1_ren_touka.814b2c92853e08fdeaa9.png",
-    "static/media/mabataki_ren_touka.png": "/react-portfolio/static/media/mabataki_ren_touka.e339a35bebf5c69f86b7.png",
-    "static/media/Slugma.jpg": "/react-portfolio/static/media/Slugma.feea3196ab8b54a52def.jpg",
-    "index.html": "/react-portfolio/index.html",
-    "main.361c65b5.css.map": "/react-portfolio/static/css/main.361c65b5.css.map",
-    "main.c32cec95.js.map": "/react-portfolio/static/js/main.c32cec95.js.map"
+    "main.css": "/static/css/main.a7d92bbb.css",
+    "main.js": "/static/js/main.1ec02b3f.js",
+    "static/media/migimuku_1_ren_touka.png": "/static/media/migimuku_1_ren_touka.5e54bb02b71061025360.png",
+    "static/media/hidarimuku_1_ren_touka.png": "/static/media/hidarimuku_1_ren_touka.814b2c92853e08fdeaa9.png",
+    "static/media/mabataki_ren_touka.png": "/static/media/mabataki_ren_touka.e339a35bebf5c69f86b7.png",
+    "static/media/Slugma.jpg": "/static/media/Slugma.feea3196ab8b54a52def.jpg",
+    "index.html": "/index.html",
+    "main.a7d92bbb.css.map": "/static/css/main.a7d92bbb.css.map",
+    "main.1ec02b3f.js.map": "/static/js/main.1ec02b3f.js.map"
   },
   "entrypoints": [
-    "static/css/main.361c65b5.css",
-    "static/js/main.c32cec95.js"
+    "static/css/main.a7d92bbb.css",
+    "static/js/main.1ec02b3f.js"
   ]
 }
