@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from "axios";
 import Cookies from "js-cookie";
 
+import { WorkCreator } from "./workCreator";
 import { Work } from "./work";
 
 export const PortFolio = () => {
@@ -37,6 +38,7 @@ export const PortFolio = () => {
 
   return (
     <>
+      <WorkCreator />
       <div className="text-center info">
         <h2 className="section-heading">{title}</h2>
         <h3 className="section-subheading text-muted mb-5">{description}</h3>

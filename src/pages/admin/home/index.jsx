@@ -6,7 +6,7 @@ import { StackShare } from './parts/stackShare';
 import { Contact } from './parts/contact';
 
 export const Home = () => {
-  const title = 'ganmoltのポートフォリオ';
+  const title = 'admin!!!ganmoltのポートフォリオ';
   const description = 'ganmoltです。このサイトはreactを触るために作りました。';
   return (
     <div className="container text-center">
