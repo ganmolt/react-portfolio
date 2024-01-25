@@ -6,6 +6,7 @@ import { AuthContext } from "App";
 
 import {Link} from "react-router-dom"
 
+import { RiAdminFill } from "react-icons/ri";
 
 export const Header = () => {
   const { isSignedIn } = useContext(AuthContext);
@@ -25,6 +26,12 @@ export const Header = () => {
     isSignedIn && (
       <li>
         <Link to="/" onClick={signOut}>ログアウト</Link>
+      </li>
+    )
+    ||
+    (
+      <li>
+        <Link to="/signin"><RiAdminFill size={'20px'} /></Link>
       </li>
     )
   )
