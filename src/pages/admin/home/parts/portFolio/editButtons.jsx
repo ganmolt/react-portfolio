@@ -4,9 +4,24 @@ import Cookies from 'js-cookie';
 
 export const EditButtons = ({ id, onEdit }) => {
   const [isEditing, setIsEditing] = useState(false);
+  const [imageFile, setImageFile] = useState(null);
+  const [encodedImage, setEncodedImage] = useState("");
   const [name, setName] = useState("");
-  const [tech, setTech] = useState("");
   const [description, setDescription] = useState("");
+  const [url, setUrl] = useState("");
+  const [tech, setTech] = useState("");
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    setImageFile(file);
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const base64String = reader.result.split(',')[1];
+      setEncodedImage(base64String);
+    };
+    reader.readAsDataURL(file);
+  };
 
   const editButtonSubmit = async () => {
     try {
@@ -16,6 +31,8 @@ export const EditButtons = ({ id, onEdit }) => {
           name,
           description,
           tech,
+          url,
+          encodedImg: encodedImage,
         },
         {
           headers: {
@@ -79,6 +96,10 @@ export const EditButtons = ({ id, onEdit }) => {
               onChange={(e) => setDescription(e.target.value)}
             />
           </label>
+          <div>
+            <label>URL:</label>
+            <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} />
+          </div>
           <label>
             使用技術:
             <textarea
@@ -86,6 +107,7 @@ export const EditButtons = ({ id, onEdit }) => {
               onChange={(e) => setTech(e.target.value)}
             />
           </label>
+          <input type="file" onChange={handleImageChange} />
           <div>
             <button type="button" onClick={editButtonSubmit}>
               編集を適用
