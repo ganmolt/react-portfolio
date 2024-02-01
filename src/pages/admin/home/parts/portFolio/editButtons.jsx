@@ -81,32 +81,32 @@ export const EditButtons = ({ id, onEdit }) => {
 
       {isEditing && (
         <div className="edit-form">
-          <label>
-            名前:
+          <div>
+            <label>name:</label>
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
-          </label>
-          <label>
-            説明:
+          </div>
+          <div>
+            <label>description:</label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
-          </label>
+          </div>
           <div>
             <label>URL:</label>
             <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} />
           </div>
-          <label>
-            使用技術:
+          <div>
+            <label>tech:</label>
             <textarea
               value={tech}
               onChange={(e) => setTech(e.target.value)}
             />
-          </label>
+          </div>
           <input type="file" onChange={handleImageChange} />
           <div>
             <button type="button" onClick={editButtonSubmit}>
