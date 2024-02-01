@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 
 import { WorkCreator } from "./workCreator";
 import { Work } from "./work";
+import { DeleteButton } from './deleteButton';
 
 export const PortFolio = () => {
   const title = "PORTFOLIO";
@@ -40,14 +41,17 @@ export const PortFolio = () => {
       <div className="row text-center">
         {works?.map((work, idx) => (
           <div key={idx} className="col-md-4 col-sm-6 service">
-          <Work
-            name={work.name}
-            url={work.url}
-            encodedImg={work.encodedImg}
-            description={work.description}
-            tech={work.tech}
-          />
-        </div>
+            <DeleteButton
+              id={work.ID}
+            />
+            <Work
+              name={work.name}
+              url={work.url}
+              encodedImg={work.encodedImg}
+              description={work.description}
+              tech={work.tech}
+            />
+          </div>
         ))}
       </div>
     </>
