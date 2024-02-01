@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-export const EditButtons = ({ id, onEdit }) => {
+import './editButton.css'
+
+export const EditButtons = ({
+  id,
+  // onEdit,
+}) => {
   const [isEditing, setIsEditing] = useState(false);
   const [imageFile, setImageFile] = useState(null);
   const [encodedImage, setEncodedImage] = useState("");
@@ -44,7 +49,7 @@ export const EditButtons = ({ id, onEdit }) => {
       // APIからのレスポンスを処理する
       if (res.status === 200) {
         // 編集が成功したら、親コンポーネントに変更を通知する
-        onEdit();
+        // onEdit();
         setIsEditing(false);
       } else {
         console.log('編集に失敗しました');
@@ -107,7 +112,14 @@ export const EditButtons = ({ id, onEdit }) => {
               onChange={(e) => setTech(e.target.value)}
             />
           </div>
-          <input type="file" onChange={handleImageChange} />
+          <div>
+            <input type="file" onChange={handleImageChange} />
+            {encodedImage &&
+              <div className="work-edit-img-container">
+                <img src={`data:image/jpeg;base64,${encodedImage}`} alt="encoded" />
+              </div>
+            }
+          </div>
           <div>
             <button type="button" onClick={editButtonSubmit}>
               編集を適用
