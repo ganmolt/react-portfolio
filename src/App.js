@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { getCurrentUser } from "api/auth";
 
 import { Header } from './components/Header';
@@ -65,21 +65,18 @@ function App() {
         setCurrentUser,
       }}
     >
-      <Router basename={process.env.PUBLIC_URL}>
-        <div className="App">
+      <div className="App">
+        <BrowserRouter>
           <Header />
           <Maru />
-
           <Routes>
             <Route path="/" element = {<Home />} />
-
             <Route exact path="/signin" element={<SignIn />} />
             <Route path="/admin" element = {<Private><AdminHome /></Private>} />
           </Routes>
-
           <Footer />
-        </div>
-      </Router>
+        </BrowserRouter>
+      </div>
     </AuthContext.Provider>
   );
 }
