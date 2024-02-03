@@ -33,8 +33,8 @@ const Marus = () => {
   };
 
   // -------- window-size --------
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth * 0.8);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight * 0.8);
 
   const updateWindowDimensions = () => {
     setWindowWidth(window.innerWidth);
