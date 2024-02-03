@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Maru from './Maru';
 
 import { FaPlusCircle } from "react-icons/fa";
@@ -32,6 +32,22 @@ const Marus = () => {
     setMaruCount(inputCount);
   };
 
+  // -------- window-size --------
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+  const updateWindowDimensions = () => {
+    setWindowWidth(window.innerWidth);
+    setWindowHeight(window.innerHeight);
+  };
+  useEffect(() => {
+    window.addEventListener('resize', updateWindowDimensions);
+    return () => {
+      window.removeEventListener('resize', updateWindowDimensions);
+    };
+  }, []);
+  // -----------------------------
+
   return (
     <div>
       <div className='maru-header'>
@@ -43,7 +59,7 @@ const Marus = () => {
       </div>
 
       {Array.from({ length: maruCount }, (_, index) => (
-        <Maru key={index} />
+        <Maru key={index} maxWidth={windowWidth} maxHeight={windowHeight} />
       ))}
     </div>
   );

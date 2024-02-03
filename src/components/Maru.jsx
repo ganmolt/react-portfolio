@@ -7,7 +7,10 @@ import png_migi from "../Images/maru/migimuku_1_ren_touka.png";
 
 import './Maru.css';
 
-const Maru = () => {
+const Maru = ({
+  maxWidth,
+  maxHeight,
+}) => {
   const [isAnimated, setIsAnimated] = useState(false);
   const [isJumped, setIsJumped] = useState(false);
   const [count, setCount] = useState(0);
@@ -17,8 +20,10 @@ const Maru = () => {
     return Math.floor(Math.random() * (max + 1 - min)) + min;
   }
 
-  const posX = getRandom(-100, 550);
-  const posY = getRandom(-50, 650);
+  // -------- Position --------
+  const posX = getRandom(0, maxWidth);
+  const posY = getRandom(0, maxHeight);
+  // --------------------------
 
   // ---------------- ANIMATION ----------------
   const urls = [
