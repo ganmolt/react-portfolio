@@ -4,7 +4,7 @@ import { getCurrentUser } from "api/auth";
 
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { Maru } from './components/Maru';
+import Maru from './components/Maru';
 
 import './App.css';
 

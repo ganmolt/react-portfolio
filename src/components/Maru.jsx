@@ -6,20 +6,14 @@ import png_migi from "../Images/maru/migimuku_1_ren_touka.png";
 
 import Draggable from 'react-draggable'
 
-export class Maru extends React.Component {
+class Maru extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       urls: [png_mbtk, png_hidari, png_migi],
       num: 0,
-
-      // MABATAKI
       isAnimated: false,
-
-      // JUMP
       isJumped: false,
-
-      // タイマー
       count: 0,
     };
   }
@@ -85,3 +79,5 @@ export class Maru extends React.Component {
     );
   }
 }
+
+export default Maru;
