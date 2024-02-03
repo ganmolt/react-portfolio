@@ -1,4 +1,4 @@
-https://ganmolt.github.io/react-portfolio/
+https://react-portfolio-one-smoky.vercel.app/
 
 # Getting Started with Create React App
 
