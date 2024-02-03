@@ -8,28 +8,18 @@ import png_migi from "../Images/maru/migimuku_1_ren_touka.png";
 import './Maru.css';
 
 const Maru = () => {
+  const [isAnimated, setIsAnimated] = useState(false);
+  const [isJumped, setIsJumped] = useState(false);
+  const [count, setCount] = useState(0);
+  const [backgroundImage, setBackgroundImage] = useState();
+
+  // ---------------- ANIMATION ----------------
   const urls = [
     png_mbtk,
     png_hidari,
     png_migi
   ];
-  const [isAnimated, setIsAnimated] = useState(false);
-  const [isJumped, setIsJumped] = useState(false);
-  const [count, setCount] = useState(0);
 
-  const [backgroundImage, setBackgroundImage] = useState();
-
-  // ------------------JUMP---------------
-  const setFinished = () => setIsJumped(false);
-
-  const onClickButton = () => {
-    setIsJumped(true);
-    setTimeout(setFinished, 1000);
-  };
-  // -------------------------------------
-
-  // ----------------MABATAKI-------------
-  const getRandom = (min, max) => Math.floor(Math.random() * (max + 1 - min)) + min;
   useEffect(() => {
     const intervalId = setInterval(() => {
       performAnimation();
@@ -41,32 +31,39 @@ const Maru = () => {
     return () => clearInterval(intervalId);
   }, [count]);
 
+  const getRandom = (min, max) => {
+    return Math.floor(Math.random() * (max + 1 - min)) + min;
+  }
+
   const performAnimation = () => {
     if (isAnimated) return;
 
     const rnd = getRandom(1, 100);
     console.log(rnd);
     if ( 1 <= rnd && rnd <= 21) {
-      if ( 1 <= rnd && rnd <= 7 ) {
-        console.log(urls[0])
-        setBackgroundImage(urls[0]);
-      } else if ( rnd <= 14 ) {
-        console.log(urls[1])
-        setBackgroundImage(urls[1]);
-      } else if ( rnd <= 21) {
-        console.log(urls[2])
-        setBackgroundImage(urls[2]);
-      }
+      if ( 1 <= rnd && rnd <= 7 ) setBackgroundImage(urls[0]);
+      else if ( rnd <= 14 ) setBackgroundImage(urls[1]);
+      else if ( rnd <= 21) setBackgroundImage(urls[2]);
+      
       setIsAnimated(true);
       setTimeout(() => setIsAnimated(false), 2000);
     }
   }
+  // -------------------------------------------
+  
+  // ---------------- JUMP ----------------
+  const handleClicked = () => {
+    if (isJumped) return;
+    setIsJumped(true);
+    setTimeout(() => setIsJumped(false), 1000);
+  };
+  // --------------------------------------
 
   return (
     <Draggable defaultPosition={{ x: 0, y: 0 }}>
       <div className="wrapper">
         <div className="maru-area">
-          <div className={isJumped ? "jump" : ""} id="button" onClick={onClickButton}>
+          <div className={isJumped ? "jump" : ""} id="button" onClick={handleClicked}>
             {/* 背景画像 */}
             <div id="maru-bg"></div>
             {/* キャラクター本体 */}
