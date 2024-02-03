@@ -8,11 +8,16 @@ import png_migi from "../Images/maru/migimuku_1_ren_touka.png";
 import './Maru.css';
 
 const Maru = () => {
-  const [urls] = useState([png_mbtk, png_hidari, png_migi]);
-  const [num, setNum] = useState(0);
+  const urls = [
+    png_mbtk,
+    png_hidari,
+    png_migi
+  ];
   const [isAnimated, setIsAnimated] = useState(false);
   const [isJumped, setIsJumped] = useState(false);
   const [count, setCount] = useState(0);
+
+  const [backgroundImage, setBackgroundImage] = useState();
 
   // ------------------JUMP---------------
   const setFinished = () => setIsJumped(false);
@@ -39,20 +44,22 @@ const Maru = () => {
   const performAnimation = () => {
     if (isAnimated) return;
 
-    const animationOptions = [
-      { isAnimated: true, num: 2 },
-      { isAnimated: true, num: 1 },
-      { isAnimated: true, num: 0 },
-    ];
-
-    animationOptions.forEach((options) => {
-      const rnd = getRandom(1, 100);
-      if (rnd % 13 === 0 || rnd % 11 === 0 || rnd % 10 === 0) {
-        setIsAnimated(true);
-        setNum(options.num);
-        setTimeout(() => setIsAnimated(false), 2000);
+    const rnd = getRandom(1, 100);
+    console.log(rnd);
+    if ( 1 <= rnd && rnd <= 21) {
+      if ( 1 <= rnd && rnd <= 7 ) {
+        console.log(urls[0])
+        setBackgroundImage(urls[0]);
+      } else if ( rnd <= 14 ) {
+        console.log(urls[1])
+        setBackgroundImage(urls[1]);
+      } else if ( rnd <= 21) {
+        console.log(urls[2])
+        setBackgroundImage(urls[2]);
       }
-    });
+      setIsAnimated(true);
+      setTimeout(() => setIsAnimated(false), 2000);
+    }
   }
 
   return (
@@ -63,7 +70,7 @@ const Maru = () => {
             {/* 背景画像 */}
             <div id="maru-bg"></div>
             {/* キャラクター本体 */}
-            <div className={isAnimated ? "mabataki" : ""} id="maru" style={{ backgroundImage: `url(${urls[num]})` }}></div>
+            <div className={isAnimated ? "mabataki" : ""} id="maru" style={{ backgroundImage: `url(${backgroundImage})` }}></div>
           </div>
         </div>
       </div>
