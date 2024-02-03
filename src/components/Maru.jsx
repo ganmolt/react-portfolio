@@ -24,7 +24,6 @@ const Maru = () => {
     const intervalId = setInterval(() => {
       performAnimation();
 
-      console.log(`Count: ${count}`);
       setCount((prevCount) => prevCount + 1);
     }, 1000);
 
@@ -39,7 +38,6 @@ const Maru = () => {
     if (isAnimated) return;
 
     const rnd = getRandom(1, 100);
-    console.log(rnd);
     if ( 1 <= rnd && rnd <= 21) {
       if ( 1 <= rnd && rnd <= 7 ) setBackgroundImage(urls[0]);
       else if ( rnd <= 14 ) setBackgroundImage(urls[1]);
