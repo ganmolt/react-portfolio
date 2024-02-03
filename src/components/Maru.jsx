@@ -17,8 +17,8 @@ const Maru = () => {
     return Math.floor(Math.random() * (max + 1 - min)) + min;
   }
 
-  const posX = getRandom(0, 400);
-  const posY = getRandom(0, 600);
+  const posX = getRandom(-100, 550);
+  const posY = getRandom(-50, 650);
 
   // ---------------- ANIMATION ----------------
   const urls = [
