@@ -6,6 +6,8 @@ import png_migi from "../Images/maru/migimuku_1_ren_touka.png";
 
 import Draggable from 'react-draggable'
 
+import './Maru.css';
+
 class Maru extends React.Component {
   constructor(props) {
     super(props);

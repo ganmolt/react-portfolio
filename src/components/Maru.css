@@ -1,0 +1,70 @@
+
+  /*----------------------------------------------
+  --------------------- maru ---------------------
+  ----------------------------------------------*/
+  .wrapper {
+    position: fixed;
+    z-index: 150;
+
+    margin-top: 100px;
+    margin-left: 100px;
+  }
+  .maru-area {
+    position: relative;
+  }
+  #maru {
+    position: absolute;
+    background: url("../Images/maru/mabataki_ren_touka.png");
+    background-position: left;
+    background-size: 6100%;
+    background-repeat: no-repeat;
+    width: 105px;
+    height: 105px;
+  }
+  #maru-bg {
+    position: absolute;
+    background: url("../Images/maru/Scene1_000.png");
+    background-size: 100%;
+    width: 105px;
+    height: 105px;
+  }
+
+  
+  .mabataki {
+    display: inline-block;
+    background-position: right;
+    -webkit-animation-name: mbtk;
+    animation-name: mbtk;
+    -webkit-animation-duration: 2.0s;
+    animation-duration: 2.0s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-timing-function: steps(60);
+    animation-timing-function: steps(60);
+  }
+  @keyframes mbtk {
+    0% {
+      background-position: left;
+    }
+    100% {
+      background-position: right;
+    }
+  }
+
+
+
+  /* -----------------JUMP----------------- */
+  #button
+  {
+    display: inline-block;
+    cursor: pointer;
+  }
+  #button.jump
+  {
+    animation: 0.4s cubic-bezier(.2,1,.2,1) 0s 1 jump;
+  }
+  @keyframes jump
+  {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-40px); }
+  }
