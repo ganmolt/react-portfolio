@@ -1,85 +1,74 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Draggable from 'react-draggable';
 
 import png_mbtk from "../Images/maru/mabataki_ren_touka.png";
 import png_hidari from "../Images/maru/hidarimuku_1_ren_touka.png";
 import png_migi from "../Images/maru/migimuku_1_ren_touka.png";
 
-import Draggable from 'react-draggable'
-
 import './Maru.css';
 
-class Maru extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      urls: [png_mbtk, png_hidari, png_migi],
-      num: 0,
-      isAnimated: false,
-      isJumped: false,
-      count: 0,
-    };
-  }
+const Maru = () => {
+  const [urls] = useState([png_mbtk, png_hidari, png_migi]);
+  const [num, setNum] = useState(0);
+  const [isAnimated, setIsAnimated] = useState(false);
+  const [isJumped, setIsJumped] = useState(false);
+  const [count, setCount] = useState(0);
 
   // ------------------JUMP---------------
-  setFinished = () => this.setState({ isJumped: false });
+  const setFinished = () => setIsJumped(false);
 
-  onClickButton = () => {
-    this.setState({ isJumped: true });
-    setTimeout(this.setFinished, 1000);
+  const onClickButton = () => {
+    setIsJumped(true);
+    setTimeout(setFinished, 1000);
   };
   // -------------------------------------
 
   // ----------------MABATAKI-------------
-  getRandom = ( min, max ) => {
-    var random = Math.floor( Math.random() * (max + 1 - min) ) + min;
-    return random;
-  }
-  componentDidMount(){
-    setTimeout( () => {
-      this.setState({count: this.state.count+1});
-      console.log(String(this.state.count));
-    }, 1000);
-  }
-  componentDidUpdate(){
-    setTimeout( () => {
-      this.setState({count: this.state.count+1});
-      // アニメ実行中なら行わない
-      if ( this.state.isAnimated === true ) {
-        return;
-      }
+  const getRandom = (min, max) => Math.floor(Math.random() * (max + 1 - min)) + min;
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      performAnimation();
 
-      var rnd = this.getRandom(1, 100);
-      if( rnd%13 === 0 ) {
-        this.setState({ isAnimated: true, num: 2 });
-        setTimeout(this.setFinishedAnime, 2000);
-      } else if( rnd%11 === 0 ) {
-        this.setState({ isAnimated: true, num: 1 });
-        setTimeout(this.setFinishedAnime, 2000);
-      } else if( rnd%10 === 0 ) {
-        this.setState({ isAnimated: true, num: 0 });
-        setTimeout(this.setFinishedAnime, 2000);
-      }
+      console.log(`Count: ${count}`);
+      setCount((prevCount) => prevCount + 1);
     }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [count]);
+
+  const performAnimation = () => {
+    if (isAnimated) return;
+
+    const animationOptions = [
+      { isAnimated: true, num: 2 },
+      { isAnimated: true, num: 1 },
+      { isAnimated: true, num: 0 },
+    ];
+
+    animationOptions.forEach((options) => {
+      const rnd = getRandom(1, 100);
+      if (rnd % 13 === 0 || rnd % 11 === 0 || rnd % 10 === 0) {
+        setIsAnimated(true);
+        setNum(options.num);
+        setTimeout(() => setIsAnimated(false), 2000);
+      }
+    });
   }
-  
-  setFinishedAnime = () => this.setState({ isAnimated: false });
-  
-  render() {
-    return (
-      <Draggable defaultPosition={{x: 0, y: 0}}>
-        <div className="wrapper">
-          <div className="maru-area">
-            <div className={this.state.isJumped ? "jump" : ""} id="button" onClick={() => this.onClickButton()}>
-              {/* 背景画像 */}
-              <div id="maru-bg"></div>
-              {/* キャラクター本体 */}
-              <div className={this.state.isAnimated ? "mabataki" : ""} id="maru" style={{ backgroundImage: 'url('+this.state.urls[this.state.num]+')' }} ></div>
-            </div>
+
+  return (
+    <Draggable defaultPosition={{ x: 0, y: 0 }}>
+      <div className="wrapper">
+        <div className="maru-area">
+          <div className={isJumped ? "jump" : ""} id="button" onClick={onClickButton}>
+            {/* 背景画像 */}
+            <div id="maru-bg"></div>
+            {/* キャラクター本体 */}
+            <div className={isAnimated ? "mabataki" : ""} id="maru" style={{ backgroundImage: `url(${urls[num]})` }}></div>
           </div>
         </div>
-      </Draggable>
-    );
-  }
-}
+      </div>
+    </Draggable>
+  );
+};
 
 export default Maru;
