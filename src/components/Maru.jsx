@@ -13,6 +13,13 @@ const Maru = () => {
   const [count, setCount] = useState(0);
   const [backgroundImage, setBackgroundImage] = useState();
 
+  const getRandom = (min, max) => {
+    return Math.floor(Math.random() * (max + 1 - min)) + min;
+  }
+
+  const posX = getRandom(0, 400);
+  const posY = getRandom(0, 600);
+
   // ---------------- ANIMATION ----------------
   const urls = [
     png_mbtk,
@@ -29,10 +36,6 @@ const Maru = () => {
 
     return () => clearInterval(intervalId);
   }, [count]);
-
-  const getRandom = (min, max) => {
-    return Math.floor(Math.random() * (max + 1 - min)) + min;
-  }
 
   const performAnimation = () => {
     if (isAnimated) return;
@@ -58,7 +61,7 @@ const Maru = () => {
   // --------------------------------------
 
   return (
-    <Draggable defaultPosition={{ x: 0, y: 0 }}>
+    <Draggable defaultPosition={{ x: posX, y: posY }}>
       <div className="wrapper">
         <div className="maru-area">
           <div className={isJumped ? "jump" : ""} id="button" onClick={handleClicked}>

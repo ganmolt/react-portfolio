@@ -1,0 +1,12 @@
+.maru-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background: none;
+  color: white;
+  height: 30px;
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+}

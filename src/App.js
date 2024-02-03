@@ -4,7 +4,7 @@ import { getCurrentUser } from "api/auth";
 
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import Maru from './components/Maru';
+import Marus from './components/Marus';
 
 import './App.css';
 
@@ -68,7 +68,7 @@ function App() {
       <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
           <Header />
-          <Maru />
+          <Marus />
 
           <Routes>
             <Route path="/" element = {<Home />} />
